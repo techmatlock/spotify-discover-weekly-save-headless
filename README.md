@@ -16,7 +16,7 @@ This projects aims to address the problem of not having time in the week to list
 
 1. Clone this repository to your local machine.
 ```
-git clone https://github.com/techmatlock/spotify-discover-weekly-save.git
+git clone https://github.com/techmatlock/spotify-discover-weekly-save-headless.git
 ```
 2. On your local machine in the project directory, initialize your virtual environment. ```python -m venv venv```
 3. Install the required packages: ```pip install -r requirements.txt```
@@ -32,7 +32,12 @@ export SPOTIPY_REDIRECT_URI=http://localhost:8080
 export USERNAME=your-username-id
 ```
 7. Go to your Spotify account and add a new playlist called "Discover Weekly Exports.
-8. In the current project directory, on your local machine run the script: ```python3 main.py```
+8. If you don't have a ".cache*" file already in your project directory, you must first generate one. (This is a feature missing from Spotify OAuth and must generate token on machine with a browser.)
+```
+sp_oauth.get_access_token()
+```
+9. Go to your server, clone this repository and copy the newly-created ".cache*" file on your local machine to the server where you'll be running this script in headless mode.
+10. On your server, run the script: ```python3 main.py```
 
 ## Usage
 * In order to benefit from this script, you need to setup crontab (Linux/Mac) or Task Scheduler (Windows) to run the script every week.
