@@ -32,7 +32,8 @@ export SPOTIPY_REDIRECT_URI=http://localhost:8080
 export USERNAME=your-username-id
 ```
 7. Go to your Spotify account and add a new playlist called "Discover Weekly Exports.
-8. If you don't have a ".cache*" file already in your project directory, you must first generate one. (This is a feature missing from Spotify OAuth and must generate token on machine with a browser.)
+8. You only have to do this ONCE.  If you don't have a ".cache*" file already in your project directory, you must first generate one. (This is a feature missing from Spotify OAuth and must generate token on machine with a browser.)
+Add the Python code below after line 30 in ```main.py```
 ```
 sp_oauth.get_access_token()
 ```
